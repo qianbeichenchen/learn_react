@@ -36,7 +36,7 @@ function ListPage() {
 
                     <div className='main-footer'>
                         <div>@ Font. 2022 HtmlStream</div>
-                        <div>FAQ / License / </div>
+                        <div>FAQ / License / <Icon.Command/> </div>
                     </div>
                 </Col>
             </Row>

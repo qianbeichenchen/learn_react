@@ -1,80 +1,77 @@
-.modal-container{
+.modal-container {
   height: calc(70vh);
   overflow-y: scroll;
   overflow-x: hidden;
+
   .my-navs {
     display: flex;
     justify-content: space-between;
-    margin:0 auto;
+    margin: 0 auto;
     background: #ededed80;
     border-radius: 8px;
 
-
     .nav-item {
       width: 25%;
+
       .nav-link {
         padding: 0 !important;
       }
 
-      .nav-btn{
+      .nav-btn {
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 8px;
         padding: 10px 1px;
         color: #444;
-        span{
+
+        span {
           margin-left: 10px;
           font-size: 16px;
         }
       }
+
       .nav-active-btn {
         background: white;
         color: #444;
         border: 1px solid #cce;
         box-shadow: 0 2px 8px #f0f1f2;
 
-        &:active ,&:focus ,&:link{
+        &:active, &:focus, &:link {
           background: white;
-          color:black;
+          color: black;
           border: 0;
         }
-
-
-
       }
     }
-
-
   }
 
-  .img-area{
-
+  .img-area {
     margin-top: 20px;
-    img{
+
+    img {
       width: 100%;
     }
   }
 
-.myForm{
-  .full-name-input-group{
-    display: flex;
-    .form-control:first-child{
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
+  .myForm {
+    .full-name-input-group {
+      display: flex;
+
+      .form-control:first-child {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .form-control:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
     }
-    .form-control:last-child{
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
+
+    .sub-title {
+      font-size: 14px;
+      color: #bbb;
     }
-
-
-
   }
-  .sub-title{
-    font-size: 14px;
-    color: #bbb;
-
-  }
-}
 }

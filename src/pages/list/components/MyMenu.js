@@ -32,7 +32,7 @@ let accordionList = [{title: '', icon:  <Icon.House />, label: 'Dashboards', chi
         return <Accordion.Item eventKey={pIndex} key={pIndex}  onChange={(index)=>getActiveIndex(index)}>
             <Accordion.Header>
                 <span className='accordion-icon'> {parentMenuItem.icon}</span>
-                <span>    {parentMenuItem.label}</span></Accordion.Header>
+                <span className='accordion-title'>    {parentMenuItem.label}</span></Accordion.Header>
         </Accordion.Item>
     } else {
         let menu = parentMenuItem.children.map((childItem, cIndex) => {
@@ -41,7 +41,7 @@ let accordionList = [{title: '', icon:  <Icon.House />, label: 'Dashboards', chi
 
                 <Accordion.Header >
                     <span className='accordion-icon'> {childItem.icon}</span>
-                    <span>    {childItem.label}</span>
+                    <span className='accordion-title'>    {childItem.label}</span>
                     {
                         childItem.badge &&  (
                             <span className='badge-circle' style={{background:childItem.color}}>
