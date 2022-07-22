@@ -1,10 +1,14 @@
-import Container from 'react-bootstrap/Container';
+
+import * as Icon from "react-bootstrap-icons";
 
 function Header() {
   return (
-    <Container className='container'>
-     <div>1</div>
-    </Container>
+      <div className='header'>
+          <div className='icon'>
+              <Icon.AppIndicator  color='#377dff' size={28}/>
+          </div>
+          <div className='title'>Front</div>
+      </div>
   );
 }
 

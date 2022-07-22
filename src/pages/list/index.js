@@ -1,36 +1,49 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Row, Col, Button,} from 'react-bootstrap';
+import * as Icon from 'react-bootstrap-icons';
 import './index.scss'
-import Icon from './icons/icon.png'
-import Notice from './icons/notice.png'
-import Avatar from './icons/avater.png'
+import Header from "./components/Header";
+import IconGroups from "./components/IconGroups";
+import MyBreadcrumb from "./components/MyBreadcrumb";
+import MyCard from "./components/MyCard";
+import MyMenu from "./components/MyMenu";
+import {useState} from 'react'
+import MyModal from "./components/MyModal";
 
 function ListPage() {
+    const [modalShow, setModalShow] = useState(false);
+
     return (
         <div className='container-box'>
             <Row className='row'>
                 <Col xs={2} className='col-2 col'>
-                    <div className='header'>
-                        <div className='icon'>
-                            <img src={Icon}/>
-                        </div>
-                        <div className='title'>Front</div>
-                    </div>
-                    <div className='menu'></div>
+                    <Header/>
+                    <MyMenu/>
                 </Col>
                 <Col xs={10} className='col-10 col'>
                     <div className='top-icon-group'>
-                        <ul className="groups">
-                            <li> <img src={Notice}/></li>
-                            <li><img src={Notice}/></li>
-                            <li><img src={Notice}/></li>
-                            <li ><img className='avatar' src={Avatar}/></li>
+                        <IconGroups/>
+                    </div>
+                    <div className='main-scroll'>
+                        <div className='title-card'>
+                            <MyBreadcrumb/>
+                            <Button variant="primary" className='add-user-btn'>
+                                <Icon.PersonPlusFill color='white' size={18}/>
+                                <span>Add Users</span>
+                            </Button>
+                        </div>
+                        <MyCard setModalShow={(visible) => setModalShow(visible)}/>
+                    </div>
 
-                        </ul>
+                    <div className='main-footer'>
+                        <div>@ Font. 2022 HtmlStream</div>
+                        <div>FAQ / License / </div>
                     </div>
                 </Col>
             </Row>
+            <MyModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
         </div>
     );
 }
